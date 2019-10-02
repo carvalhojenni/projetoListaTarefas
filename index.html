@@ -10,17 +10,17 @@
 </head>
 
 <body>
-    <div id="container">
-        <p class="texto">adiciona uma tarefa</p>
+    <form id="form">
+        <div id="container">
+            <p class="texto">adiciona uma tarefa</p>
 
-        <form id="form">
             <div id="">
                 <input type="text" id="adicioneTarefa" placeholder="Escreva aquí uma nova tarefa">
             </div>
             <button id="btn-roxa">ADD</button>
 
+            <p class="erro"></p>
             <div class="Tabela">
-                <p class="erro"></p>
                 <div id=tarefas>
                     <ul id="Tabela">
 
@@ -30,9 +30,9 @@
                     <button id="btn-checar">Checar</button>
                     <button id="btn-remover">Remover</button>
                 </div>
-        </form>
-        </div>
-        <script src="js/script.js"></script>
+    </form>
+    </div>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

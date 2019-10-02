@@ -3,11 +3,14 @@ const form = document.getElementById("form");
 const adicioneTexto = document.getElementById("adicioneTarefa");
 const botaoRoxo = document.getElementById("btn-roxa");
 const tabela = document.getElementById("Tabela");
+const erro = document.classList("erro");
 
-botaoRoxo.addEventListener("click", function(evento) {
+// const botaoRemover = document.getElementById("btn-remover");
+
+form.addEventListener("click", function(evento) {
     evento.preventDefault();
-    if (adicioneTexto.value.trim() == "") {
-        adicioneTexto.getAttribute("placeholder", "Por favor, digite a sua tarefa:");
+    if (adicioneTexto === "") {
+        erro.textContent = "erro";
 
     } else {
         const tabelaFin = document.createElement("li");
@@ -34,5 +37,18 @@ botaoRoxo.addEventListener("click", function(evento) {
                 tabelaFin.classList.add("tarefas-completo");
             }
         })
+
+        const botaoCheck = document.getElementById("btn-checar");
+        botaoCheck.addEventListener("click", function() {
+            if (tabelaFin.classList.add("tarefas-completo"));
+        })
+
+        const botaoRemover = document.getElementById("btn-remover");
+        botaoRemover.addEventListener("click", function(e) {
+            if (tabelaFin.parentNode) {
+                tabelaFin.parentNode.removeChild(tabelaFin)
+            }
+        })
+
     }
 })
