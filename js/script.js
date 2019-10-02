@@ -1,37 +1,38 @@
 const containerPrincipal = document.getElementById("container");
 const form = document.getElementById("form");
-// Adicionar texto no campo adicioneTarefas 
 const adicioneTexto = document.getElementById("adicioneTarefa");
-
-// adicionar click no botao ADD 
 const botaoRoxo = document.getElementById("btn-roxa");
 const tabela = document.getElementById("Tabela");
 
-
 botaoRoxo.addEventListener("click", function(evento) {
     evento.preventDefault();
-    if (adicioneTexto.value.trim() === "") {
-        adicioneTexto.getAttribute("placeholder", "Digite tarefa!");
+    if (adicioneTexto.value.trim() == "") {
+        adicioneTexto.getAttribute("placeholder", "Por favor, digite a sua tarefa:");
+
     } else {
         const tabelaFin = document.createElement("li");
+        tabelaFin.classList.add("tarefas");
         tabelaFin.textContent = adicioneTexto.value;
-        console.log("clickou");
         tabela.appendChild(tabelaFin);
         form.reset();
+
+        let buttonFin = document.createElement("span");
+        buttonFin.textContent = "X";
+        tabelaFin.appendChild(buttonFin);
+
+        buttonFin.addEventListener("click", function() {
+            if (buttonFin.parentNode) {
+                tabelaFin.appendChild(buttonFin);
+                tabela.removeChild(tabelaFin);
+            }
+        })
+        tabelaFin.addEventListener("click", function() {
+            console.log(tabelaFin.classList)
+            if (tabelaFin.classList.contains("tarefas-completo")) {
+                tabelaFin.classList.remove("tarefas-completo");
+            } else {
+                tabelaFin.classList.add("tarefas-completo");
+            }
+        })
     }
 })
-
-const div = document.createElement("div");
-tabelaFin.appendChild(div);
-div = setAttribute("text", "");
-const removerLinha = document.createElement("button");
-tabela.appendChild(removerLinha);
-
-
-
-
-
-
-
-
-const BotaoRemover = document.getElementById("btn-remover");
