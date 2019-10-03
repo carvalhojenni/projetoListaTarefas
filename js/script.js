@@ -17,15 +17,17 @@ form.addEventListener("click", function(evento) {
         tabela.appendChild(tabelaFin);
         form.reset();
 
-        let buttonFin = document.createElement("span");
+        let buttonFin = document.createElement("button");
         buttonFin.textContent = "X";
-        tabelaFin.appendChild(buttonFin);
+        Tabela.appendChild(buttonFin);
 
-        buttonFin.addEventListener("click", function(evento) {
-            if (buttonFin.parentNode) {
-                tabela.removeChild(tabelaFin);
-            }
-        })
+
+
+        // buttonFin.addEventListener("click", function(evento) {
+        //     if (Tabela.parentNode) {
+        //         Tabela.paarentNode.removeChild(tabelaFin);
+        //     }
+        // })
         tabelaFin.addEventListener("click", function() {
             console.log(tabelaFin.classList)
             if (tabelaFin.classList.contains("tarefas-completo")) {
@@ -42,14 +44,10 @@ form.addEventListener("click", function(evento) {
 
         const botaoRemover = document.getElementById("btn-remover");
         botaoRemover.addEventListener("click", function(e) {
-            if (tabelaFin.parentNode) {
-                tabelaFin.parentNode.removeChild(tabelaFin)
+            if (Tabela.parentNode) {
+                Tabela.parentNode.removeChild(Tabela);
             }
         })
 
     }
-    const botaoCheck = document.getElementById("btn-checar");
-    botaoCheck.addEventListener("click", function() {
-        if (tabela.classList.add("tarefas-completo"));
-    })
 })
