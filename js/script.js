@@ -3,17 +3,15 @@ const form = document.getElementById("form");
 const adicioneTexto = document.getElementById("adicioneTarefa");
 const botaoRoxo = document.getElementById("btn-roxa");
 const tabela = document.getElementById("Tabela");
-const erro = document.classList("erro");
-
-// const botaoRemover = document.getElementById("btn-remover");
+const botaoCheck = document.getElementById("btn-checar");
 
 form.addEventListener("click", function(evento) {
     evento.preventDefault();
-    if (adicioneTexto === "") {
-        erro.textContent = "erro";
+    if (adicioneTexto.value.trim() === "") {
+        // erro.textContent = "erro";
 
     } else {
-        const tabelaFin = document.createElement("li");
+        const tabelaFin = document.createElement("p");
         tabelaFin.classList.add("tarefas");
         tabelaFin.textContent = adicioneTexto.value;
         tabela.appendChild(tabelaFin);
@@ -23,9 +21,8 @@ form.addEventListener("click", function(evento) {
         buttonFin.textContent = "X";
         tabelaFin.appendChild(buttonFin);
 
-        buttonFin.addEventListener("click", function() {
+        buttonFin.addEventListener("click", function(evento) {
             if (buttonFin.parentNode) {
-                tabelaFin.appendChild(buttonFin);
                 tabela.removeChild(tabelaFin);
             }
         })
@@ -51,4 +48,8 @@ form.addEventListener("click", function(evento) {
         })
 
     }
+    const botaoCheck = document.getElementById("btn-checar");
+    botaoCheck.addEventListener("click", function() {
+        if (tabela.classList.add("tarefas-completo"));
+    })
 })
